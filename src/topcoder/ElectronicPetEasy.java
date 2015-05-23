@@ -5,34 +5,27 @@ package topcoder;
  * 
  * Can be a lot simpler! Maybe intersection is not necessary
  * 
- * @author Andrei
+ * @author Andrei Palade
  */
 public class ElectronicPetEasy {
 
     // intersection of two sorted arrays
     public boolean isCommon(int[] a, int[] b) {       
-        int i = 0; // current index in a
-        int j = 0; // current index in b
-        while (i < a.length && j < b.length){
-            if (a[i] == b[j]) {
+        for (int i = 0, j = 0; i < a.length && j < b.length;){
+            if (a[i] == b[j]) 
                 return true;
-            }
-            else if (a[i] > b[j]){
-                j += 1;
-            }
-            else {
-                i += 1;
-            }
+            else if (a[i] > b[j]) 
+                j++;
+            else 
+                i++;
         }
         return false;
     }
     
     // intersection is not necessary, use only st1 and st2
-    public String isDifficult(int st1, int p1, int t1, int st2, int p2, int t2) {
-     
-        if(st1 == st2){
+    public String isDifficult(int st1, int p1, int t1, int st2, int p2, int t2) {    
+        if(st1 == st2) 
             return "Difficult";
-        } 
         
         int[] a = new int[t1+1];
         a[0] = st1;
