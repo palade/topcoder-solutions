@@ -1,17 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package topcoder;
 
 /**
- *
- * @author Andrei
+ * TopCoder Single Round Match 653 Round 1 - Division II, Level One
+ * 
+ * @author Andrei Palade
  */
 public class CountryGroup {
 
-    
     public int solve(int[] a){
         int buffer = 0;
         int current = 0;
@@ -40,10 +35,7 @@ public class CountryGroup {
         return buffer != 0 ? -1 : countries;
     }
     
-    
-    /**
-     * @param args the command line arguments
-     */
+   
     public static void main(String[] args) {
         CountryGroup group = new CountryGroup();
         
@@ -52,6 +44,5 @@ public class CountryGroup {
         for(int i = 0; i < test.length; i++){
             System.out.println(i + ": " + group.solve(test[i]));
         }
-    }
-    
+    } 
 }

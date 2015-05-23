@@ -1,7 +1,9 @@
 package topcoder;
 
 /**
- * @author Andrei
+ * TopCoder Single Round Match 211 Round 1 - Division II, Level Two
+ * 
+ * @author Andrei Palade
  */
 public class grafixCorrupt {
 
@@ -14,7 +16,6 @@ public class grafixCorrupt {
         }
         return score;
     }
-    
     
     public int selectWord(String[] dictionary, String candidate){
         int biggest = -1;
@@ -33,13 +34,14 @@ public class grafixCorrupt {
     public static void main(String[] args) {
         grafixCorrupt group = new grafixCorrupt();
         
-        String[][] test = {{"cat", "cab", "lab"}, {"dab"}, {"cat", "cab", "lab"}, {"bic"}, {"zhadjsg", "vzptftx", "fbaslxs", "ejejncm", "xpxkeae", "ixrrtzw",
- "ovctbzx", "sfzekhh", "lxzixjk", "jixdpik", "bkianck", "laclyin",
- "uqmdkfx", "dimswqo", "fojhetr", "grntrce", "obdtqwx", "bhojwcy",
- "zuuuvst", "mvqtoly", "aftmupx", "govuidx", "qklpret", "yptccki",
- "uxdnslh", "wudrusz", "uwxbvou", "ouytqun", "pjdexqe", "xraaqdw",
- "lxmoncl", "sjnjfgb", "qrlqgvc", "fgvoadm", "yohsrxw", "udpvrsr",
- "mklucgt"}, {"vklikgf"}};
+        String[][] test = {{"cat", "cab", "lab"}, {"dab"}, {"cat", "cab", "lab"}, {"bic"}, 
+            {"zhadjsg", "vzptftx", "fbaslxs", "ejejncm", "xpxkeae", "ixrrtzw",
+            "ovctbzx", "sfzekhh", "lxzixjk", "jixdpik", "bkianck", "laclyin",
+            "uqmdkfx", "dimswqo", "fojhetr", "grntrce", "obdtqwx", "bhojwcy",
+            "zuuuvst", "mvqtoly", "aftmupx", "govuidx", "qklpret", "yptccki",
+            "uxdnslh", "wudrusz", "uwxbvou", "ouytqun", "pjdexqe", "xraaqdw",
+            "lxmoncl", "sjnjfgb", "qrlqgvc", "fgvoadm", "yohsrxw", "udpvrsr",
+            "mklucgt"}, {"vklikgf"}};
         
         for(int i = 0; i < test.length; i+=2){
             System.out.println(i + ": " + group.selectWord(test[i], test[i+1][0]));
