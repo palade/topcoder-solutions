@@ -7,50 +7,58 @@ package topcoder;
  */
 public class AnEasyProblem {
     
-    public long getSumInterval(long i, long j) {
-        return i * i - ((i - j)*(i - j + 1)) / 2;
-    } 
-    
+  
     public int solve(long sum) {
         
         long i = 1;
-        long j = 2;
-        
-        while((i * (i + 1) / 2) < sum) {
-            i++;
-        }
-
-        if((i * (i + 1) / 2) == sum) {
-            return (int)i;
-        }
+        long prev = 0;
+               
+        for(; prev < sum; i++) prev += i;
         
         i = i - 1;
-        
-        while(i > j) {        
-            long temp = getSumInterval(i, j);
+
+        if(prev == sum) {
+            return (int)i;
+        }
+        long temp = 0;
+        long j = i - 2; // initial index i 
+        long k = 0;
+        while(true) {   
             
-            while(temp < sum) {
-                j = j + 1;
-                temp = getSumInterval(i, j);
+            temp = (prev -= i);
+            i = i - 1;        
+            temp += k;
+            while(j > 0) {
+
+                temp +=j;
+                k += j;
+                j -= 1;
+                
+                if(!(temp < sum)){
+                    break;
+                }
             }
             
             if (temp == sum) {
-                return (int)(i + j - 1);
-            }
+                return (int) (i + i - j - 1);
+            } 
             
-            i = i - 1;
-            j = 2;
+            if (j <= 0) {
+                return -1;
+            }
+            k = k - (i - 1);
         }
-        
-        return -1;
     }
-    
-    
+ 
     public static void main(String[] args) {
         
         AnEasyProblem group = new AnEasyProblem();
         
-        long[] test = {100};
+        long[] test = {14};
+        
+     //   long[] test = {1000000000000L};
+        
+       // long[] test = {8};
         
         for(int i = 0; i < test.length; i++){
             System.out.println(i + ": " + group.solve(test[i]));
