@@ -4,6 +4,7 @@ package topcoder;
  * TopCoder Single Round Match 638 Round 1 - Division II, Level One
  * 
  * Can be done with a StringBuilder, instead of using primitives
+ * Possibly more efficient since we traverse only once
  * 
  * @author Andrei Palade
  */
